@@ -17,7 +17,7 @@ func TestCreateDatabase(t *testing.T) {
 
 	os.Remove(path.Join(os.Getenv("HOME"), ".postgres-embedded", "9.6.5-1"))
 
-	rc := startPostgres(sConfig, dConfig)
+	rc := StartPostgres(sConfig, dConfig)
 
 	connStr := fmt.Sprintf("user=postgres dbname=postgres sslmode=disable port=%v host=127.0.0.1", dConfig.port)
 	db, err := sql.Open("postgres", connStr)
@@ -41,6 +41,6 @@ func TestCreateDatabase(t *testing.T) {
 
 	defer func() {
 		recover()
-		stopPostGres(rc)
+		StopPostGres(rc)
 	}()
 }

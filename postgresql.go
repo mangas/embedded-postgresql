@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func startPostgres(startConfig StartupConfig, dbConfig DBConfig) RuntimeConfig {
+func StartPostgres(startConfig StartupConfig, dbConfig DBConfig) RuntimeConfig {
 	downloadDir := downloadPostgres(runtime.GOOS, startConfig.version)
 	dataDir := path.Join(downloadDir, "data")
 	dirExists := pathExists(dataDir)
@@ -54,7 +54,7 @@ func startPostgres(startConfig StartupConfig, dbConfig DBConfig) RuntimeConfig {
 	return rc
 }
 
-func stopPostGres(runConfig RuntimeConfig) error {
+func StopPostGres(runConfig RuntimeConfig) error {
 	out, err := exec.Command(
 		path.Join(
 			runConfig.execDir, "bin", "pg_ctl"),
