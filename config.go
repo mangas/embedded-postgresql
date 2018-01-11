@@ -1,16 +1,16 @@
 package embeded_postgresql
 
 type StartupConfig struct {
-	cleanDir bool
-	version  string
+	CleanDir bool
+	Version  string
 }
 
 type RuntimeConfig struct {
-	execDir string
-	dataDir string
+	ExecDir string
+	DataDir string
 }
 
 type DBConfig struct {
-	port int
-	username string
+	Port int
+	Username string
 }

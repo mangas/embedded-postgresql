@@ -19,7 +19,7 @@ func TestCreateDatabase(t *testing.T) {
 
 	rc := StartPostgres(sConfig, dConfig)
 
-	connStr := fmt.Sprintf("user=postgres dbname=postgres sslmode=disable port=%v host=127.0.0.1", dConfig.port)
+	connStr := fmt.Sprintf("user=postgres dbname=postgres sslmode=disable port=%v host=127.0.0.1", dConfig.Port)
 	db, err := sql.Open("postgres", connStr)
 
 	if err != nil {
